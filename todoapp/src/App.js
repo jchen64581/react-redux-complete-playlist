@@ -11,10 +11,10 @@ class App extends Component {
   }
   deleteTodo = (id) => {
     const todos = this.state.todos.filter(todo => {
-      return todo.id !== id
+      return todo.id !== id //if any id is not equal to the passed id, then remain them in the array, if equal, delete that element with that id.
     });
     this.setState({
-      todos
+      todos //return updated to do list
     });
   }
   render() {
