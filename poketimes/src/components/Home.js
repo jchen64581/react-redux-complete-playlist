@@ -10,19 +10,19 @@ class Home extends Component {
       .then(res => {
         console.log(res);
         this.setState({
-          posts: res.data.slice(0,10)
+          posts: res.data.slice(0,10) //slice the first 10 array element.
         });
       })
   }
   render(){
     const { posts } = this.state
-    const postList = posts.length ? (
-      posts.map(post => {
+    const postList = posts.length ? (   //if it has length, it return true, else return false.
+      posts.map(post => { //if has length, cycle through the data using map()
         return (
           <div className="post card" key={post.id}>
             <div className="card-content">
               <span className="card-title">{post.title}</span>
-              <p>{post.body}</p>
+              <p>{post.body}</p> //body is a properties in the data table.
             </div>
           </div>
         )
